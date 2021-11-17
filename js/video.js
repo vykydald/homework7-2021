@@ -40,12 +40,16 @@ document.querySelector("#skip").addEventListener("click", function() {
 
 document.querySelector("#mute").addEventListener("click", function() {
 	if (document.querySelector("#mute").innerHTML == "Mute") {
-		video.volume = 0.0;
+		video.muted = true;
 		document.querySelector("#mute").innerHTML = "Unmute";
+		document.querySelector("#volume").innerHTML = "0%";
+		document.querySelector("#slider").value = document.querySelector("#slider").min;
 	}
 	else if (document.querySelector("#mute").innerHTML == "Unmute"){
-		video.volume = 1.0;
+		video.muted = false;
 		document.querySelector("#mute").innerHTML = "Mute";
+		document.querySelector("#volume").innerHTML = "100%";
+		document.querySelector("#slider").value = document.querySelector("#slider").max;
 	};
 });
 
